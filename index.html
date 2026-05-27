@@ -4,6 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Content Security Policy (mitiga XSS) -->
+    <!-- Nota: frame-ancestors y form-action solo funcionan como cabecera HTTP.
+         Añádelas en el servidor (Netlify _headers / Nginx / Vercel) en producción. -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com data:;
+      img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com;
+      connect-src 'self' https://script.google.com https://script.googleusercontent.com https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;
+      base-uri 'self';
+      object-src 'none';
+    " />
+
     <title>Automatiza tareas repetitivas con IA · OptimaIA</title>
     <meta name="description"
         content="Consultoría de IA para autónomos y pequeños negocios. Automatizamos mensajes, presupuestos y documentos. Ahorra horas cada semana. Valoración gratuita." />
