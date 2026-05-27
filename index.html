@@ -2,236 +2,430 @@
 <html lang="es-ES">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Política de Privacidad · OptimaIA</title>
-  <meta name="description"
-    content="Política de Privacidad de OptimaIA: información sobre el tratamiento de datos personales recogidos a través de nuestro formulario y servicios." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://optimaia.es/privacidad.html" />
-  <meta name="theme-color" content="#173a8f" />
+    <title>Automatiza tareas repetitivas con IA · OptimaIA</title>
+    <meta name="description"
+        content="Consultoría de IA para autónomos y pequeños negocios. Automatizamos mensajes, presupuestos y documentos. Ahorra horas cada semana. Valoración gratuita." />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="icon" type="image/png" sizes="512x512" href="img/android-chrome-512x512.png">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="canonical" href="https://optimaia.es/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#173a8f" />
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#eef4ff',
-              100: '#dbe7ff',
-              500: '#2b59c3',
-              600: '#1e44a8',
-              700: '#173a8f',
-              800: '#0f2a6b',
-              900: '#0a1f52',
-            },
-          },
-        },
-      },
-    };
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Automatiza tareas repetitivas con IA · OptimaIA" />
+    <meta property="og:description"
+        content="Consultoría de IA para autónomos y pequeños negocios. Ahorra horas cada semana automatizando mensajes, presupuestos y documentos." />
+    <meta property="og:url" content="https://optimaia.es/" />
+    <meta property="og:image" content="https://optimaia.es/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "OptimaIA",
+    "description": "Consultoría de IA aplicada a la automatización de procesos para autónomos y pequeños negocios.",
+    "url": "https://optimaia.es/",
+    "areaServed": "ES",
+    "telephone": "+34649569159",
+    "priceRange": "€€",
+    "serviceType": [
+      "Automatización con IA",
+      "Consultoría de procesos",
+      "Automatización de presupuestos",
+      "Automatización de respuestas a clientes"
+    ]
+  }
   </script>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
 
-    body {
-      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    }
 
-    /* Estilos tipográficos para el bloque legal pegado desde Iubenda u otro generador */
-    .legal h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #111827;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .legal h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #111827;
-      margin-top: 1.75rem;
-      margin-bottom: .75rem;
-    }
-
-    .legal p {
-      color: #374151;
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    .legal ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      color: #374151;
-      margin-bottom: 1rem;
-    }
-
-    .legal li {
-      margin-bottom: .5rem;
-      line-height: 1.75;
-    }
-
-    .legal a {
-      color: #173a8f;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .legal a:hover {
-      color: #0f2a6b;
-    }
-
-    .legal strong {
-      color: #111827;
-      font-weight: 600;
-    }
-
-    .legal hr {
-      margin: 2rem 0;
-      border-color: #e5e7eb;
-    }
-  </style>
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        }
+    </style>
 </head>
 
-<body class="bg-white text-gray-800 antialiased">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
                 <div class="w-10 h-10">
                     <img src="img/logo.svg" alt="Logo de OptimaIA">
                 </div>
-        <span class="text-lg font-semibold text-gray-900">OptimaIA</span>
-      </a>
-      <a href="index.html"
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 transition">
-        ← Volver al inicio
-      </a>
-    </div>
-  </header>
+                <span class="text-lg font-semibold text-gray-900">Optima<span class="text-brand-700">IA</span></span>
 
-  <main id="contenido" class="px-6 py-16 md:py-24">
-    <article class="max-w-3xl mx-auto">
-
-      <header class="mb-12">
-        <p class="text-sm font-semibold text-brand-700 uppercase tracking-wider">Información legal</p>
-        <h1 class="mt-2 text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-          Política de Privacidad
-        </h1>
-        <p class="mt-4 text-gray-600 text-sm">
-          Última actualización: <time datetime="2026-01-01">1 de enero de 2026</time>
-        </p>
-      </header>
-
-      <!--
-        =============================================================
-        AQUÍ PEGA EL CONTENIDO LEGAL GENERADO EN IUBENDA
-        Sustituye TODO el bloque .legal de ejemplo por el HTML que te dé Iubenda.
-        =============================================================
-      -->
-      <section class="legal">
-
-        <p>
-          [Pega aquí el contenido HTML de tu Política de Privacidad generado en Iubenda.]
-        </p>
-
-        <h2>1. Responsable del tratamiento</h2>
-        <p>
-          <strong>Nombre / Razón social:</strong> [Tu nombre o empresa]<br>
-          <strong>NIF/CIF:</strong> [Tu NIF]<br>
-          <strong>Dirección:</strong> [Tu dirección postal]<br>
-          <strong>Email de contacto:</strong> <a href="mailto:hola@optimaia.es">hola@optimaia.es</a>
-        </p>
-
-        <h2>2. Finalidad del tratamiento</h2>
-        <p>
-          Los datos personales que nos facilites a través del formulario de contacto (nombre, email, teléfono y
-          descripción de tu caso) se tratarán con la única finalidad de responder a tu solicitud de información o
-          valoración.
-        </p>
-
-        <h2>3. Base legal</h2>
-        <p>
-          El tratamiento se basa en tu <strong>consentimiento expreso</strong>, otorgado al marcar la casilla de
-          aceptación de esta Política de Privacidad antes de enviar el formulario.
-        </p>
-
-        <h2>4. Destinatarios y conservación</h2>
-        <ul>
-          <li>Los datos se almacenan en Google Workspace (Google Sheets), con servidores en la UE.</li>
-          <li>No se cederán a terceros salvo obligación legal.</li>
-          <li>Se conservarán mientras exista interés mutuo o, en su defecto, durante un máximo de 24 meses.</li>
-        </ul>
-
-        <h2>5. Tus derechos</h2>
-        <p>
-          Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición, limitación y
-          portabilidad escribiendo a
-          <a href="mailto:hola@optimaia.es">hola@optimaia.es</a>.
-          También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos
-          (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).
-        </p>
-
-        <h2>6. Cookies y analítica</h2>
-        <p>
-          Este sitio utiliza Google Analytics para medir el uso de la web de forma anónima. Consulta la
-          <a href="cookies.html">Política de Cookies</a> para más información.
-        </p>
-
-      </section>
-      <!-- =============================================================
-           FIN DEL BLOQUE A SUSTITUIR
-           ============================================================= -->
-
-      <hr class="my-12 border-gray-200" />
-
-      <p class="text-sm text-gray-600">
-        ¿Dudas sobre el tratamiento de tus datos? Escríbenos a
-        <a href="mailto:hola@optimaia.es" class="text-brand-700 underline underline-offset-2 hover:text-brand-800">
-          hola@optimaia.es
-        </a>.
-      </p>
-
-      <p class="mt-6 text-xs text-gray-600">
-        Política generada y archivada en Iubenda — versión <time datetime="2026-01-01">1 de enero de 2026</time>.
-      </p>
-
-    </article>
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-gray-100 px-6 py-10 mt-12">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
-      <div class="flex items-center gap-2">
-        <div class="w-6 h-6">
-          <img src="img/logo.svg" alt="Logo de OptimaIA">
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+                <a href="#problemas" class="hover:text-brand-700 transition">Problemas</a>
+                <a href="#metodo" class="hover:text-brand-700 transition">Qué hacemos</a>
+                <a href="#comparativa" class="hover:text-brand-700 transition">Antes vs Después</a>
+                <a href="#contacto" class="hover:text-brand-700 transition">Contacto</a>
+            </nav>
+            <a href="#contacto"
+                class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-brand-700 rounded-lg shadow-sm hover:bg-brand-800 hover:shadow-md transition-all duration-200 hover:scale-[1.02]">
+                Hablemos
+            </a>
         </div>
-        <span class="font-medium text-gray-700">OptimaIA</span>
-        <span>· IA práctica para pequeños negocios</span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="index.html#contacto" class="hover:text-brand-700 transition">Contacto</a>
-        <a href="index.html" class="hover:text-brand-700 transition">Inicio</a>
-      </div>
-    </div>
-  </footer>
+    </header>
+
+    <main id="contenido">
+
+        <!-- Hero -->
+        <section aria-labelledby="hero-title" class="px-6 pt-5 pb-16 md:pt-28 md:pb-28">
+            <div class="max-w-4xl mx-auto text-center">
+                <span
+                    class="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wide text-brand-700 bg-brand-50 rounded-full">
+                    IA práctica para pequeños negocios
+                </span>
+                <h1 id="hero-title"
+                    class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+                    Automatiza con <span class="text-brand-700">IA</span> las tareas repetitivas
+                    de tu negocio
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                    Consultoría de IA para autónomos y pequeños negocios. Ahorra horas cada semana en mensajes,
+                    presupuestos y documentos.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contacto"
+                        class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white bg-brand-700 rounded-lg shadow-sm hover:bg-brand-800 hover:shadow-md transition-all duration-200 hover:scale-[1.02]">
+                        Quiero ahorrar tiempo con IA
+                    </a>
+                    <a href="#metodo"
+                        class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 text-base font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm transition-all duration-200 hover:scale-[1.02]">
+                        Ver cómo funciona
+                    </a>
+                </div>
+                <p class="mt-6 text-sm text-gray-600">Sin compromiso. Primera valoración gratuita.</p>
+            </div>
+        </section>
+
+        <!-- Problemas -->
+        <section id="problemas" aria-labelledby="problemas-title"
+            class="px-6 py-20 md:py-24 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mb-14">
+                    <h2 id="problemas-title" class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+                        Problemas que solucionamos con IA en pequeños negocios
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Son las fugas de tiempo más habituales en negocios pequeños. Si reconoces dos o más, podemos
+                        ayudarte.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-4 font-bold">
+                            01</div>
+                        <h3 class="text-lg font-semibold text-gray-900">Respondes siempre lo mismo</h3>
+                        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+                            WhatsApp, email, redes… las mismas 10 preguntas cada semana. Pierdes horas repitiendo
+                            respuestas.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-4 font-bold">
+                            02</div>
+                        <h3 class="text-lg font-semibold text-gray-900">Falta seguimiento comercial</h3>
+                        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+                            Pasas un presupuesto y se queda en el limbo. No hay tiempo para perseguir a cada cliente.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-4 font-bold">
+                            03</div>
+                        <h3 class="text-lg font-semibold text-gray-900">Información repartida</h3>
+                        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+                            Datos en el móvil, en el correo, en un Excel y en la cabeza. Encontrar algo cuesta más que
+                            hacerlo.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-4 font-bold">
+                            04</div>
+                        <h3 class="text-lg font-semibold text-gray-900">Todo depende de ti</h3>
+                        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+                            Si paras, para el negocio. No puedes desconectar porque nadie más sabe cómo se hacen las
+                            cosas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué hacemos -->
+        <section id="metodo" aria-labelledby="metodo-title" class="px-6 py-20 md:py-28">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mb-16">
+                    <span class="text-sm font-semibold text-brand-700 uppercase tracking-wider">Nuestro método</span>
+                    <h2 id="metodo-title" class="mt-3 text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+                        Cómo automatizamos tu negocio con IA en 3 pasos
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        No vendemos proyectos largos ni promesas grandes. Detectamos un problema concreto, lo resolvemos
+                        y medimos el resultado.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="relative">
+                        <div aria-hidden="true" class="text-5xl font-extrabold text-brand-700/55">01</div>
+                        <h3 class="mt-2 text-xl font-semibold text-gray-900">Detectamos la pérdida de tiempo</h3>
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Hablamos contigo 30 minutos. Encontramos la tarea que más horas te quita cada semana.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <div aria-hidden="true" class="text-5xl font-extrabold text-brand-700/55">02</div>
+                        <h3 class="mt-2 text-xl font-semibold text-gray-900">Creamos una solución pequeña</h3>
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Una automatización concreta, en días, no en meses. Sin complicarte la vida ni cambiar tus
+                            herramientas.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <div aria-hidden="true" class="text-5xl font-extrabold text-brand-700/55">03</div>
+                        <h3 class="mt-2 text-xl font-semibold text-gray-900">Mejoramos si funciona</h3>
+                        <p class="mt-3 text-gray-600 leading-relaxed">
+                            Medimos las horas ahorradas. Si va bien, ampliamos a otras tareas. Si no, lo retiramos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Antes vs Después -->
+        <section id="comparativa" aria-labelledby="comparativa-title"
+            class="px-6 py-20 md:py-24 bg-gray-50 border-y border-gray-100">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <h2 id="comparativa-title" class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+                        Antes vs Después de automatizar con IA
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Lo mismo que haces hoy, pero sin pasar horas haciéndolo.
+                    </p>
+                </div>
+
+                <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+                    <div class="grid grid-cols-3 text-sm md:text-base">
+                        <div class="p-4 md:p-6 bg-gray-100 font-semibold text-gray-700 border-b border-gray-200">Tarea
+                        </div>
+                        <div
+                            class="p-4 md:p-6 bg-gray-100 font-semibold text-gray-700 border-b border-l border-gray-200">
+                            Antes</div>
+                        <div
+                            class="p-4 md:p-6 bg-brand-50 font-semibold text-brand-800 border-b border-l border-gray-200">
+                            Después</div>
+
+                        <div class="p-4 md:p-6 font-medium text-gray-900 border-b border-gray-100">Responder mensajes
+                        </div>
+                        <div class="p-4 md:p-6 text-gray-700 border-b border-l border-gray-100">2 h/día contestando lo
+                            mismo</div>
+                        <div class="p-4 md:p-6 text-gray-800 border-b border-l border-gray-100">Respuestas automáticas
+                            con tu tono</div>
+
+                        <div class="p-4 md:p-6 font-medium text-gray-900 border-b border-gray-100">Presupuestos</div>
+                        <div class="p-4 md:p-6 text-gray-700 border-b border-l border-gray-100">Plantillas a mano,
+                            errores frecuentes</div>
+                        <div class="p-4 md:p-6 text-gray-800 border-b border-l border-gray-100">Generados en 1 minuto
+                            desde un mensaje</div>
+
+                        <div class="p-4 md:p-6 font-medium text-gray-900 border-b border-gray-100">Seguimiento de
+                            clientes</div>
+                        <div class="p-4 md:p-6 text-gray-700 border-b border-l border-gray-100">"Ya le escribiré mañana"
+                            (y no llega)</div>
+                        <div class="p-4 md:p-6 text-gray-800 border-b border-l border-gray-100">Recordatorios y mensajes
+                            automáticos</div>
+
+                        <div class="p-4 md:p-6 font-medium text-gray-900 border-b border-gray-100">Documentos y datos
+                        </div>
+                        <div class="p-4 md:p-6 text-gray-700 border-b border-l border-gray-100">Repartidos entre móvil,
+                            mail y Excel</div>
+                        <div class="p-4 md:p-6 text-gray-800 border-b border-l border-gray-100">Centralizados y
+                            buscables al instante</div>
+
+                        <div class="p-4 md:p-6 font-medium text-gray-900">Dependencia del dueño</div>
+                        <div class="p-4 md:p-6 text-gray-700 border-l border-gray-100">Si no estás tú, no avanza</div>
+                        <div class="p-4 md:p-6 text-gray-800 border-l border-gray-100">El negocio funciona aunque
+                            desconectes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final + Formulario -->
+        <section id="contacto" aria-labelledby="contacto-title" class="px-6 py-20 md:py-28">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <h2 id="contacto-title"
+                            class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+                            Dinos qué tarea repites cada semana y te diremos si se puede automatizar.
+                        </h2>
+                        <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+                            Sin compromiso. Sin tecnicismos. Te respondemos en menos de 24 horas con una valoración
+                            honesta: si tiene sentido automatizarlo o no.
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center text-xs font-bold mt-0.5">
+                                    ✓</div>
+                                <p class="text-gray-700">Primera valoración gratuita</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center text-xs font-bold mt-0.5">
+                                    ✓</div>
+                                <p class="text-gray-700">Soluciones desde días, no meses</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center text-xs font-bold mt-0.5">
+                                    ✓</div>
+                                <p class="text-gray-700">Si no ahorras tiempo, no sigues pagando</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-10">
+                            <a href="https://wa.me/34649569159?text=Hola%2C%20quiero%20saber%20si%20puedo%20automatizar%20una%20tarea%20de%20mi%20negocio"
+                                target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-3 px-6 py-3.5 text-base font-semibold text-gray-900 bg-[#25D366] rounded-lg shadow-sm hover:bg-[#1ebe5b] hover:shadow-md transition-all duration-200 hover:scale-[1.02]">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.298-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z" />
+                                </svg>
+                                Hablar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Formulario -->
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 md:p-8">
+                        <h3 class="text-xl font-semibold text-gray-900">Cuéntanos tu caso</h3>
+                        <p class="mt-2 text-sm text-gray-600">Te respondemos en menos de 24 h.</p>
+
+                        <form id="contact-form" action="#" method="post" class="mt-6 space-y-5" novalidate>
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1.5">Nombre <span
+                                        class="text-red-500" aria-hidden="true">*</span></label>
+                                <input id="nombre" name="nombre" type="text" required
+                                    class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition"
+                                    placeholder="Cómo te llamas" />
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">Email <span
+                                        class="text-red-500" aria-hidden="true">*</span></label>
+                                <input id="email" name="email" type="email" required
+                                    class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition"
+                                    placeholder="tucorreo@ejemplo.com" />
+                            </div>
+                            <div>
+                                <label for="telefono"
+                                    class="flex items-baseline text-sm font-medium text-gray-700 mb-1.5">
+                                    <span>Teléfono</span>
+                                    <span class="text-xs font-normal text-gray-600 ml-1">(opcional)</span>
+                                </label>
+                                <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel"
+                                    pattern="[0-9+\s()\-]{6,20}"
+                                    class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition"
+                                    placeholder="+34 600 000 000" />
+                            </div>
+                            <div>
+                                <label for="tarea" class="block text-sm font-medium text-gray-700 mb-1.5">Tarea que más
+                                    tiempo te quita <span class="text-red-500" aria-hidden="true">*</span></label>
+                                <textarea id="tarea" name="tarea" rows="4" required
+                                    class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition resize-none"
+                                    placeholder="Ej: respondo cada día 30 mensajes parecidos por WhatsApp..."></textarea>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <input id="privacidad" name="privacidad" type="checkbox" required
+                                    class="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-brand-700 focus:ring-2 focus:ring-brand-500 focus:ring-offset-0 cursor-pointer" />
+                                <label for="privacidad"
+                                    class="text-sm text-gray-600 leading-relaxed cursor-pointer select-none">
+                                    He leído y acepto la
+                                    <a href="privacidad.html" target="_blank" rel="noopener"
+                                        class="text-brand-700 font-medium underline underline-offset-2 hover:text-brand-800">
+                                        Política de Privacidad
+                                    </a>
+                                    <span class="text-red-500" aria-hidden="true">*</span>
+                                </label>
+                            </div>
+                            <button id="contact-submit" type="submit"
+                                class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white bg-brand-700 rounded-lg shadow-sm hover:bg-brand-800 hover:shadow-md transition-all duration-200 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+                                Enviar y recibir valoración
+                            </button>
+                            <p id="contact-status" role="status" aria-live="polite" class="text-sm text-center hidden">
+                            </p>
+                            <p class="text-xs text-gray-600 text-center">
+                                Tus datos solo se usan para responderte. No spam.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 px-6 py-10">
+        <div
+            class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6">
+                    <img src="img/logo.svg" alt="Logo de OptimaIA">
+                </div>
+                <span class="font-medium text-gray-700">OptimaIA</span>
+                <span>· IA práctica para pequeños negocios</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-brand-700 transition">Aviso legal</a>
+                <a href="privacidad.html" class="hover:text-brand-700 transition">Privacidad</a>
+                <a href="#contacto" class="hover:text-brand-700 transition">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/contact-form.js" defer></script>
+
+    <!-- Google tag (gtag.js) - cargado al final para no bloquear el render -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-9T9WW7R6S6"></script>
+    <script src="js/analytics.js" defer></script>
 
 </body>
 
