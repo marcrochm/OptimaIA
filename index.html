@@ -76,6 +76,7 @@
                 <a href="#problemas" class="hover:text-brand-700 transition">Problemas</a>
                 <a href="#metodo" class="hover:text-brand-700 transition">Qué hacemos</a>
                 <a href="#comparativa" class="hover:text-brand-700 transition">Antes vs Después</a>
+                <a href="#demo" class="hover:text-brand-700 transition">Demo</a>
                 <a href="#contacto" class="hover:text-brand-700 transition">Contacto</a>
             </nav>
             <a href="#contacto"
@@ -132,7 +133,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition flex flex-col">
                         <div
                             class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-4 font-bold">
                             01</div>
@@ -141,8 +142,13 @@
                             WhatsApp, email, redes… las mismas 10 preguntas cada semana. Pierdes horas repitiendo
                             respuestas.
                         </p>
+                        <button type="button" data-modal-open="modal-demo"
+                            class="mt-4 inline-flex items-center self-start text-sm font-semibold text-brand-700 hover:text-brand-800 transition">
+                            Ver demo interactiva
+                            <span aria-hidden="true" class="ml-1.5">→</span>
+                        </button>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition flex flex-col">
                         <div
                             class="w-10 h-10 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center mb-4 font-bold">
                             02</div>
@@ -150,6 +156,11 @@
                         <p class="mt-2 text-gray-600 text-sm leading-relaxed">
                             Pasas un presupuesto y se queda en el limbo. No hay tiempo para perseguir a cada cliente.
                         </p>
+                        <button type="button" data-modal-open="modal-followup"
+                            class="mt-4 inline-flex items-center self-start text-sm font-semibold text-brand-700 hover:text-brand-800 transition">
+                            Ver demo interactiva
+                            <span aria-hidden="true" class="ml-1.5">→</span>
+                        </button>
                     </div>
                     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                         <div
@@ -276,6 +287,115 @@
             </div>
         </section>
 
+        <!-- Demo: Generador de presupuestos -->
+        <section id="demo" aria-labelledby="demo-title" class="px-6 py-20 md:py-28 bg-gray-50/60">
+            <div class="max-w-5xl mx-auto">
+                <div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+                    <span class="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wide text-brand-700 bg-brand-50 rounded-full">
+                        Demo en vivo · sin registro
+                    </span>
+                    <h2 id="demo-title" class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
+                        Prueba el Generador de Presupuestos
+                    </h2>
+                    <p class="mt-4 text-base md:text-lg text-gray-600 leading-relaxed">
+                        Rellena cuatro campos y recibe un borrador profesional en segundos. Sin enviar emails, sin crear cuentas.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
+                    <!-- Formulario -->
+                    <form id="bg-form" class="lg:col-span-2 bg-brand-50/40 rounded-2xl border border-brand-100 p-6 md:p-8 space-y-5 shadow-sm" novalidate>
+                        <div>
+                            <label for="bg-servicio" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Tipo de servicio <span class="text-red-500" aria-hidden="true">*</span>
+                            </label>
+                            <input id="bg-servicio" name="servicio" type="text" required autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition"
+                                placeholder="Ej. Diseño de logotipo" />
+                        </div>
+                        <div>
+                            <label for="bg-alcance" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Alcance breve <span class="text-red-500" aria-hidden="true">*</span>
+                            </label>
+                            <textarea id="bg-alcance" name="alcance" rows="3" required autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition resize-none"
+                                placeholder="3 propuestas + 2 rondas de cambios + entrega en SVG y PNG"></textarea>
+                        </div>
+                        <div>
+                            <label for="bg-condiciones" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Condiciones clave
+                            </label>
+                            <textarea id="bg-condiciones" name="condiciones" rows="2" autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition resize-none"
+                                placeholder="Plazo 10 días, 50% por adelantado, IVA no incluido"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tono</label>
+                            <div role="radiogroup" aria-label="Tono del presupuesto" class="grid grid-cols-3 gap-2 text-sm">
+                                <label class="bg-tone-option cursor-pointer">
+                                    <input type="radio" name="tono" value="formal" class="sr-only peer" checked>
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Formal</span>
+                                </label>
+                                <label class="bg-tone-option cursor-pointer">
+                                    <input type="radio" name="tono" value="cercano" class="sr-only peer">
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Cercano</span>
+                                </label>
+                                <label class="bg-tone-option cursor-pointer">
+                                    <input type="radio" name="tono" value="tecnico" class="sr-only peer">
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Técnico</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" id="bg-submit"
+                            class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white bg-brand-700 rounded-lg shadow-sm hover:bg-brand-800 hover:shadow-md transition-all duration-200 hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+                            <span id="bg-submit-label">Generar presupuesto</span>
+                        </button>
+                        <p class="text-xs text-gray-500 text-center">Se genera en tu navegador. Nada se envía a ningún servidor.</p>
+                    </form>
+
+                    <!-- Resultado -->
+                    <div class="lg:col-span-3">
+                        <div id="bg-output-wrapper" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                            <div class="flex items-center justify-between px-5 md:px-6 py-3 border-b border-gray-100 bg-gray-50/50">
+                                <span class="text-xs font-semibold tracking-wide text-gray-500 uppercase">Borrador</span>
+                                <button type="button" id="bg-copy" disabled
+                                    class="text-sm font-medium text-brand-700 hover:text-brand-800 disabled:text-gray-400 disabled:cursor-not-allowed transition">
+                                    Copiar
+                                </button>
+                            </div>
+                            <div id="bg-output" class="p-5 md:p-8 text-sm md:text-[15px] text-gray-800 leading-relaxed whitespace-pre-wrap min-h-[280px]" aria-live="polite" aria-atomic="false">
+                                <p class="text-gray-500 italic">Tu borrador aparecerá aquí.</p>
+                            </div>
+                        </div>
+
+                        <!-- Educación de producto: motor de ejecución vs chat genérico -->
+                        <aside class="mt-6 rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+                            <p class="text-[11px] font-semibold tracking-wider text-brand-700 uppercase mb-2">¿Por qué esto es diferente a un chat genérico?</p>
+                            <p class="text-sm md:text-[15px] text-gray-700 leading-relaxed">
+                                Esto no es un chatbot al que copias y pegas hasta acertar. Es un
+                                <span class="font-semibold text-gray-900">motor de ejecución</span>: recibe tus datos estructurados, aplica tu tono y la lógica de tu negocio, y devuelve un resultado listo para enviar. Sin prompts, sin reescribir cada vez, sin enseñar a una IA genérica qué hace tu empresa.
+                            </p>
+                        </aside>
+
+                        <!-- CTA tras generar (oculto hasta primer resultado) -->
+                        <div id="bg-cta" class="mt-6 hidden">
+                            <div class="rounded-2xl bg-brand-700 text-white p-6 md:p-7">
+                                <p class="text-[11px] font-semibold tracking-wider text-white/80 uppercase mb-2">Demo personalizada</p>
+                                <p class="text-base md:text-lg leading-relaxed">
+                                    Esto es solo el principio. Construimos una versión <span class="font-semibold underline decoration-white/40 underline-offset-4">adaptada a tu negocio</span>: con tus precios, tus condiciones y tu tono. La pruebas con tus propios casos antes de decidir nada.
+                                </p>
+                                <a href="#contacto"
+                                    class="mt-5 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-brand-800 bg-white rounded-lg hover:bg-brand-50 transition">
+                                    Quiero mi demo personalizada
+                                    <span aria-hidden="true" class="ml-2">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Final + Formulario -->
         <section id="contacto" aria-labelledby="contacto-title" class="px-6 py-20 md:py-28">
             <div class="max-w-5xl mx-auto">
@@ -392,6 +512,230 @@
 
     </main>
 
+    <!-- ================================================== -->
+    <!-- MODALES -->
+    <!-- Plantilla reutilizable. Duplica este bloque cambiando -->
+    <!-- el id, aria-labelledby y el contenido interno.        -->
+    <!-- ================================================== -->
+    <div id="modal-demo" class="modal hidden fixed inset-0 z-50" role="dialog" aria-modal="true" aria-labelledby="modal-demo-title">
+        <!-- Backdrop -->
+        <div class="modal__backdrop absolute inset-0 bg-gray-900/60 backdrop-blur-sm"></div>
+
+        <!-- Caja centrada -->
+        <div class="relative h-full w-full flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto pointer-events-none">
+            <div class="modal__panel relative w-full max-w-3xl bg-white rounded-2xl shadow-xl border border-gray-200 pointer-events-auto">
+                <!-- Cabecera -->
+                <div class="flex items-center justify-between px-6 md:px-8 py-4 border-b border-gray-100">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 text-[11px] font-medium tracking-wide text-brand-700 bg-brand-50 rounded-full mb-1">Demo en vivo</span>
+                        <h3 id="modal-demo-title" class="text-lg md:text-xl font-semibold text-gray-900">Respuesta Express a clientes</h3>
+                    </div>
+                    <button type="button" data-modal-close aria-label="Cerrar"
+                        class="-mr-2 inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Contenido: Demo 2 -->
+                <div class="px-6 md:px-8 py-6 md:py-8 space-y-6">
+                    <p class="text-sm md:text-[15px] text-gray-600">
+                        Pega un mensaje caótico de un cliente y obtendrás una respuesta profesional lista para enviar.
+                    </p>
+
+                    <form id="respGen-form" class="space-y-5" novalidate>
+                        <div>
+                            <label for="respGen-mensaje" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Mensaje recibido <span class="text-red-500" aria-hidden="true">*</span>
+                            </label>
+                            <textarea id="respGen-mensaje" name="mensaje" rows="4" required autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition resize-none"
+                                placeholder="Hola buenas, me interesaba saber un poco precios y plazos para lo del logo que me dijiste, a ver si me lo puedes confirmar gracias"></textarea>
+                        </div>
+                        <div>
+                            <label for="respGen-contexto" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Contexto de tu respuesta <span class="text-xs font-normal text-gray-500">(opcional)</span>
+                            </label>
+                            <textarea id="respGen-contexto" name="contexto" rows="2" autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition resize-none"
+                                placeholder="Logo desde 350€, plazo 10 días, envío presupuesto si confirma alcance"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Estilo de respuesta</label>
+                            <div role="radiogroup" aria-label="Estilo de la respuesta" class="grid grid-cols-3 gap-2 text-sm">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="estilo" value="profesional" class="sr-only peer" checked>
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Profesional</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="estilo" value="cercano" class="sr-only peer">
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Cercano</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="estilo" value="conciso" class="sr-only peer">
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Conciso</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" id="respGen-submit"
+                            class="w-full inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-brand-700 rounded-lg shadow-sm hover:bg-brand-800 hover:shadow-md transition-all duration-200 hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+                            <span id="respGen-submit-label">Generar respuesta</span>
+                        </button>
+                    </form>
+
+                    <!-- Resultado -->
+                    <div id="respGen-output-wrapper" class="bg-gray-50/60 rounded-2xl border border-gray-200 overflow-hidden">
+                        <div class="flex items-center justify-between px-5 py-3 border-b border-gray-100 bg-white">
+                            <span class="text-xs font-semibold tracking-wide text-gray-500 uppercase">Respuesta sugerida</span>
+                            <button type="button" id="respGen-copy" disabled
+                                class="text-sm font-medium text-brand-700 hover:text-brand-800 disabled:text-gray-400 disabled:cursor-not-allowed transition">
+                                Copiar
+                            </button>
+                        </div>
+                        <div id="respGen-output" class="p-5 md:p-6 text-sm md:text-[15px] text-gray-800 leading-relaxed whitespace-pre-wrap min-h-[180px]" aria-live="polite" aria-atomic="false">
+                            <p class="text-gray-500 italic">La respuesta aparecerá aquí.</p>
+                        </div>
+                    </div>
+
+                    <!-- Educación de producto -->
+                    <aside class="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+                        <p class="text-[11px] font-semibold tracking-wider text-brand-700 uppercase mb-2">¿Por qué esto es diferente a un chat genérico?</p>
+                        <p class="text-sm md:text-[15px] text-gray-700 leading-relaxed">
+                            No es un chatbot al que copias y pegas. Es un <span class="font-semibold text-gray-900">motor de ejecución</span>: entiende el mensaje real del cliente, aplica tu estilo y devuelve una respuesta lista para enviar. Sin prompts, sin reescribir, sin instrucciones cada vez.
+                        </p>
+                    </aside>
+
+                    <!-- CTA tras generar -->
+                    <div id="respGen-cta" class="hidden">
+                        <div class="rounded-2xl bg-brand-700 text-white p-6">
+                            <p class="text-[11px] font-semibold tracking-wider text-white/80 uppercase mb-2">Demo personalizada</p>
+                            <p class="text-base md:text-lg leading-relaxed">
+                                Hacemos una versión <span class="font-semibold underline decoration-white/40 underline-offset-4">entrenada con tu tono real</span> y tus mensajes habituales. La pruebas con clientes reales antes de decidir nada.
+                            </p>
+                            <a href="#contacto" data-modal-close
+                                class="mt-5 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-brand-800 bg-white rounded-lg hover:bg-brand-50 transition">
+                                Quiero mi demo personalizada
+                                <span aria-hidden="true" class="ml-2">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MODAL DEMO 3: Seguimiento comercial ============ -->
+    <div id="modal-followup" class="modal hidden fixed inset-0 z-50" role="dialog" aria-modal="true" aria-labelledby="modal-followup-title">
+        <div class="modal__backdrop absolute inset-0 bg-gray-900/60 backdrop-blur-sm"></div>
+        <div class="relative h-full w-full flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto pointer-events-none">
+            <div class="modal__panel relative w-full max-w-3xl bg-white rounded-2xl shadow-xl border border-gray-200 pointer-events-auto">
+                <div class="flex items-center justify-between px-6 md:px-8 py-4 border-b border-gray-100">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 text-[11px] font-medium tracking-wide text-brand-700 bg-brand-50 rounded-full mb-1">Demo en vivo</span>
+                        <h3 id="modal-followup-title" class="text-lg md:text-xl font-semibold text-gray-900">Seguimiento Comercial</h3>
+                    </div>
+                    <button type="button" data-modal-close aria-label="Cerrar"
+                        class="-mr-2 inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="px-6 md:px-8 py-6 md:py-8 space-y-6">
+                    <p class="text-sm md:text-[15px] text-gray-600">
+                        Reactiva clientes fríos. Indica el contexto y genera un mensaje de seguimiento listo para enviar.
+                    </p>
+
+                    <form id="fs-form" class="space-y-5" novalidate>
+                        <div>
+                            <label for="fs-nombre" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Nombre del cliente <span class="text-red-500" aria-hidden="true">*</span>
+                            </label>
+                            <input id="fs-nombre" name="nombre" type="text" required autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition"
+                                placeholder="María, Carlos, Estudio Acme…" />
+                        </div>
+                        <div>
+                            <label for="fs-contacto" class="block text-sm font-medium text-gray-700 mb-1.5">Último contacto</label>
+                            <select id="fs-contacto" name="contacto"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
+                                <option value="presupuesto">Presupuesto enviado</option>
+                                <option value="reunion">Reunión realizada</option>
+                                <option value="consulta">Consulta inicial</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fs-situacion" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Situación actual <span class="text-xs font-normal text-gray-500">(opcional)</span>
+                            </label>
+                            <textarea id="fs-situacion" name="situacion" rows="3" autocomplete="off"
+                                class="w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-gray-500 transition resize-none"
+                                placeholder="Le mandé el presupuesto hace 10 días, dijo que lo tenía que ver con su socio y no he sabido nada más"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tono</label>
+                            <div role="radiogroup" aria-label="Tono del seguimiento" class="grid grid-cols-3 gap-2 text-sm">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="tono" value="persuasivo" class="sr-only peer" checked>
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Persuasivo</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="tono" value="amistoso" class="sr-only peer">
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Amistoso</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="tono" value="directo" class="sr-only peer">
+                                    <span class="block text-center px-3 py-2 rounded-lg border border-gray-300 peer-checked:bg-brand-700 peer-checked:text-white peer-checked:border-brand-700 transition">Directo</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" id="fs-submit"
+                            class="w-full inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-brand-700 rounded-lg shadow-sm hover:bg-brand-800 hover:shadow-md transition-all duration-200 hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+                            <span id="fs-submit-label">Generar seguimiento</span>
+                        </button>
+                    </form>
+
+                    <div id="fs-output-wrapper" class="bg-gray-50/60 rounded-2xl border border-gray-200 overflow-hidden">
+                        <div class="flex items-center justify-between px-5 py-3 border-b border-gray-100 bg-white">
+                            <span class="text-xs font-semibold tracking-wide text-gray-500 uppercase">Mensaje de seguimiento</span>
+                            <button type="button" id="fs-copy" disabled
+                                class="text-sm font-medium text-brand-700 hover:text-brand-800 disabled:text-gray-400 disabled:cursor-not-allowed transition">
+                                Copiar
+                            </button>
+                        </div>
+                        <div id="fs-output" class="p-5 md:p-6 text-sm md:text-[15px] text-gray-800 leading-relaxed whitespace-pre-wrap min-h-[180px]" aria-live="polite" aria-atomic="false">
+                            <p class="text-gray-500 italic">El mensaje aparecerá aquí.</p>
+                        </div>
+                    </div>
+
+                    <!-- Educación de producto -->
+                    <aside class="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+                        <p class="text-[11px] font-semibold tracking-wider text-brand-700 uppercase mb-2">¿Por qué esto es diferente a un chat genérico?</p>
+                        <p class="text-sm md:text-[15px] text-gray-700 leading-relaxed">
+                            No es un chatbot al que tienes que recordarle a quién escribir cada lunes. Es un <span class="font-semibold text-gray-900">motor de ejecución</span>: detecta qué cliente necesita seguimiento, redacta el mensaje adecuado y lo deja listo para enviar. Tú solo apruebas.
+                        </p>
+                    </aside>
+
+                    <div id="fs-cta" class="hidden">
+                        <div class="rounded-2xl bg-brand-700 text-white p-6">
+                            <p class="text-[11px] font-semibold tracking-wider text-white/80 uppercase mb-2">Demo personalizada</p>
+                            <p class="text-base md:text-lg leading-relaxed">
+                                Conectamos el sistema con tu CRM, tu Excel o tu agenda y construimos una versión <span class="font-semibold underline decoration-white/40 underline-offset-4">a medida de tu pipeline</span>. La pruebas con tus clientes reales antes de pagar nada.
+                            </p>
+                            <a href="#contacto" data-modal-close
+                                class="mt-5 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-brand-800 bg-white rounded-lg hover:bg-brand-50 transition">
+                                Quiero mi demo personalizada
+                                <span aria-hidden="true" class="ml-2">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="border-t border-gray-100 px-6 py-10">
         <div
@@ -411,7 +755,12 @@
         </div>
     </footer>
 
+    <script src="js/modal.js" defer></script>
     <script src="js/contact-form.js" defer></script>
+    <script src="js/budget-generator.js" defer></script>
+    <script src="js/response-generator.js" defer></script>
+    <script src="js/followup-generator.js" defer></script>
+    <script src="js/pro-mode.js" defer></script>
 
     <!-- Google tag (gtag.js) - cargado al final para no bloquear el render -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-9T9WW7R6S6"></script>
