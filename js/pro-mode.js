@@ -44,8 +44,6 @@
     }
 
     function init() {
-        injectStyles();
-
         // Bind del logo (header + footer)
         var logos = document.querySelectorAll('a img[alt="Logo de OptimaIA"]');
         logos.forEach(function (img) {
@@ -58,55 +56,6 @@
             window.isProMode = true;
             showPill();
         }
-    }
-
-    // ---------- Inyección de CSS (una sola vez) ----------
-    function injectStyles() {
-        if (document.getElementById('optimaia-promode-styles')) return;
-        var css =
-        '.pm-pill{position:fixed;top:84px;left:50%;transform:translateX(-50%);z-index:9998;' +
-            'padding:6px 14px;font:600 12px/1 Inter,system-ui,-apple-system,sans-serif;' +
-            'color:#fff;background:#0f172a;border:1px solid rgba(255,255,255,.12);' +
-            'border-radius:9999px;box-shadow:0 10px 25px rgba(0,0,0,.18);cursor:pointer;' +
-            'letter-spacing:.02em;user-select:none;}' +
-        '.pm-overlay{position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.55);' +
-            'backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);' +
-            'display:flex;align-items:center;justify-content:center;padding:16px;' +
-            'font-family:Inter,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5;color:#0f172a;}' +
-        '.pm-card{background:#fff;border-radius:18px;max-width:480px;width:100%;' +
-            'padding:24px 24px 20px;box-shadow:0 25px 60px rgba(0,0,0,.25);box-sizing:border-box;}' +
-        '.pm-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}' +
-        '.pm-badge{display:inline-block;padding:3px 10px;font-size:11px;font-weight:600;' +
-            'color:#173a8f;background:#eef4ff;border-radius:9999px;letter-spacing:.04em;text-transform:uppercase;}' +
-        '.pm-title{margin:10px 0 4px;font-size:18px;font-weight:700;color:#0f172a;line-height:1.3;}' +
-        '.pm-sub{margin:0;color:#475569;font-size:13px;}' +
-        '.pm-x{border:0;background:transparent;color:#64748b;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px;border-radius:6px;}' +
-        '.pm-x:hover{background:#f1f5f9;color:#0f172a;}' +
-        '.pm-field{margin-top:18px;}' +
-        '.pm-label{display:block;font-size:12px;font-weight:600;color:#334155;margin-bottom:6px;}' +
-        '.pm-input,.pm-select{width:100%;box-sizing:border-box;padding:10px 12px;font-size:13px;' +
-            'border:1px solid #cbd5e1;border-radius:10px;background:#f8fafc;color:#0f172a;outline:none;}' +
-        '.pm-input{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}' +
-        '.pm-select{font-family:Inter,system-ui,sans-serif;}' +
-        '.pm-input:focus,.pm-select:focus{border-color:#173a8f;background:#fff;box-shadow:0 0 0 3px rgba(23,58,143,.15);}' +
-        '.pm-hint{margin:6px 0 0;font-size:11px;color:#64748b;}' +
-        '.pm-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}' +
-        '.pm-status{margin:12px 0 0;font-size:12px;color:#dc2626;}' +
-        '.pm-actions{margin-top:18px;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;}' +
-        '.pm-btn{padding:9px 16px;font-size:13px;font-weight:600;font-family:Inter,system-ui,sans-serif;' +
-            'border-radius:10px;cursor:pointer;border:1px solid transparent;line-height:1.2;}' +
-        '.pm-btn-primary{color:#fff;background:#173a8f;border-color:#173a8f;}' +
-        '.pm-btn-primary:hover{background:#0f2a6b;border-color:#0f2a6b;}' +
-        '.pm-btn-ghost{color:#334155;background:#fff;border-color:#cbd5e1;}' +
-        '.pm-btn-ghost:hover{background:#f8fafc;}' +
-        '.pm-btn-danger{color:#b91c1c;background:#fff;border-color:#fecaca;margin-right:auto;}' +
-        '.pm-btn-danger:hover{background:#fef2f2;}' +
-        '.pm-foot{margin:16px 0 0;padding-top:12px;border-top:1px solid #f1f5f9;font-size:11px;color:#64748b;line-height:1.5;}';
-
-        var style = document.createElement('style');
-        style.id = 'optimaia-promode-styles';
-        style.textContent = css;
-        document.head.appendChild(style);
     }
 
     // ---------- Detección triple-clic ----------
@@ -198,7 +147,7 @@
                     '</select>' +
                 '</div>' +
 
-                '<p id="pm-status" class="pm-status" style="display:none;"></p>' +
+                '<p id="pm-status" class="pm-status pm-hide"></p>' +
 
                 '<div class="pm-actions">' +
                     (currentKey ? '<button type="button" class="pm-btn pm-btn-danger" data-pm-clear>Eliminar clave</button>' : '') +
@@ -253,7 +202,7 @@
         var key = (input.value || '').trim();
         if (!key || key.length < 20) {
             status.textContent = 'La clave parece inválida. Debería empezar por “sk-” y tener al menos 20 caracteres.';
-            status.style.display = 'block';
+            status.classList.remove('pm-hide');
             return;
         }
         setKey(key);
